@@ -1,0 +1,35 @@
+@import "tailwindcss";
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@layer components {
+    .btn {
+        @apply bg-blue-600 text-white font-semibold py-2 px-4 rounded hover:bg-blue-700 transition;
+    }
+}
+
+@layer utilities {
+    .text-shadow {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+}
+
+
+@theme {
+    --color-primary: #1e40af;
+    --color-secondary: #f97316;
+}
+
+@layer components {
+    .page-list>.page-item:nth-child(odd) {
+        @apply from-blue-900 via-blue-900 to-orange-500;
+        background: linear-gradient(135deg, rgba(30, 64, 175, 0.9), rgb(30, 58, 138), rgba(249, 115, 22, 0.6));
+    }
+
+    .page-list>.page-item:nth-child(even) {
+        @apply from-teal-900 via-cyan-800 to-blue-900;
+        background: linear-gradient(135deg, rgba(19, 78, 74, 0.9), rgba(34, 120, 136, 0.8), rgba(30, 58, 138, 0.5));
+    }
+}
