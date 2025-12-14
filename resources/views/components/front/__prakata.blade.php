@@ -3,9 +3,9 @@
   <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center max-w-6xl mx-auto">
    <!-- Foto Kepsek -->
    <div data-aos="fade-right" class="text-center lg:text-left">
-    <img src="assets/images/kepsek.jpg" alt="Kepala Sekolah"
+    <img src="{{ asset('storage/foto_kepsek/' . $prakata->foto_kepsek) }}" alt="Kepala Sekolah"
      class="w-80 h-96 mx-auto lg:mx-0 rounded-2xl shadow-2xl object-cover border-8 border-gray-100">
-    <p class="mt-6 text-2xl font-bold text-primary">Drs. H. Ahmad Suhendra, M.Pd.</p>
+    <p class="mt-6 text-2xl font-bold text-primary">{{ $prakata->kepsek }}.</p>
     <p class="text-lg text-gray-600">Kepala Sekolah</p>
    </div>
 

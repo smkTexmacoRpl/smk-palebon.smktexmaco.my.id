@@ -10,8 +10,9 @@
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
    <!-- Kegiatan 1 -->
    <div class="group relative overflow-hidden rounded-2xl shadow-xl cursor-pointer">
-    <img src="assets/images/kegiatan1.jpg" alt="Prakerin di Telkom"
-     class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-110">
+    <img
+     src="https://plus.unsplash.com/premium_photo-1726081012679-3f470ee279a7?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+     alt="Prakerin di Telkom" class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-110">
     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80">
     </div>
     <div class="absolute bottom-0 left-0 right-0 p-8 text-white">
@@ -22,9 +23,12 @@
 
    <!-- Kegiatan 2 -->
    <div class="group relative overflow-hidden rounded-2xl shadow-xl cursor-pointer">
-    <img src="assets/images/kegiatan2.jpg" alt="Job Fair"
-     class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-110">
-    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-secondary/80 to-blue-700/90 ">
+    </div>
+    <img
+     src="https://plus.unsplash.com/premium_photo-1679936310785-d3b70fbee101?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+     alt="Job Fair" class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-110">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-secondary/80 to-blue-700/90 ">
     </div>
     <div class="absolute bottom-0 left-0 right-0 p-8 text-white">
      <h3 class="text-2xl font-bold mb-2">Job Fair & Bursa Kerja Khusus 2025</h3>
@@ -34,8 +38,9 @@
 
    <!-- Kegiatan 3 -->
    <div class="group relative overflow-hidden rounded-2xl shadow-xl cursor-pointer">
-    <img src="assets/images/kegiatan3.jpg" alt="Hari Kartini"
-     class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-110">
+    <img
+     src="https://media.istockphoto.com/id/2180703837/id/foto/perayaan-dan-kebersamaan.jpg?s=2048x2048&w=is&k=20&c=mv61kMQFClWOfPhO8R15iZWOzWbQI9hZtK_UoH_PxWQ="
+     alt="Hari Kartini" class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-110">
     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80">
     </div>
     <div class="absolute bottom-0 left-0 right-0 p-8 text-white">
@@ -46,7 +51,7 @@
   </div>
 
   <div class="text-center mt-12">
-   <a href="galeri.html"
+   <a href="{{ url('galeri') }}"
     class="inline-block bg-secondary text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-orange-600 transition">
     Lihat Galeri Lengkap →
    </a>

@@ -137,7 +137,7 @@
 
   <!-- Tombol Lihat Semua -->
   <div class="text-center mt-12">
-   <a href="berita.html"
+   <a href="{{ url('berita') }}"
     class="inline-block bg-primary text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-blue-700 transition shadow-lg">
     Lihat Semua Berita →
    </a>

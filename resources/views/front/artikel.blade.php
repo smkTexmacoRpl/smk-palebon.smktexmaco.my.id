@@ -1,20 +1,23 @@
 @extends('layouts.utama')
 @section('title','Artikel')
 @section('content')
-<section class="mt-[18vh]">
-    <div class="container mx-auto px-6">
+<section id="list-berita" class="py-16 md:py-24 bg-gray-50  mt-[12vh] md:mt-[18vh]">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 
         {{-- Header Artikel diletakkan di luar grid utama agar lebar penuh --}}
-        <div class="bg-white rounded-2xl shadow-lg p-6 mb-8">
-            <h2 class="flex mt-5 text-3xl md:text-4xl font-bold justify-center">Artikel</h2>
+        <div class="text-center mb-16">
+            <h2
+                class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white border-b-4 border-primary-500 inline-block pb-1">
+                Artikel
+            </h2>
         </div>
 
         {{-- START: Grid Container untuk Layout Utama (Artikel Kiri, Sidebar Kanan) --}}
-        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
             {{-- KOLOM KIRI (Daftar Artikel) --}}
-            <div class="lg:col-span-3">
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
                     @forelse ($artikels as $artikel)
                     <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
@@ -40,31 +43,40 @@
 
             {{-- KOLOM KANAN (Sidebar) --}}
             <div class="lg:col-span-1">
-                <aside class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 sticky top-28">
+                <aside
+                    class="bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-6 sticky top-28 border border-gray-100 dark:border-gray-700">
 
-                    <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Berita Terbaru</h2>
-                    <ul class="space-y-4">
+                    {{-- Berita Terbaru --}}
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-5 border-b pb-2 border-primary-500">
+                        📰 Berita Terbaru
+                    </h2>
+                    <ul class="space-y-4 divide-y divide-gray-200 dark:divide-gray-700">
                         @foreach ($latestPosts as $post)
-                        <li class="border-b border-gray-200 dark:border-gray-700 pb-4">
+                        <li class="pt-4 first:pt-0">
                             <a href="{{ route('posts.show', $post->slug) }}"
-                                class="block hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-                                🔹 {{ $post->title }}
+                                class="block text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors font-medium text-lg line-clamp-2">
+                                {{ $post->title }}
                             </a>
-                            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">{{ $post->published_at->format('d F
-                                Y') }}
+                            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                                <time datetime="{{ $post->published_at->format('Y-m-d') }}">{{
+                                    $post->published_at->format('d F Y') }}</time>
                             </p>
                         </li>
                         @endforeach
                     </ul>
 
-                    <div class="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
-                        <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Artikel Terkait</h2>
-                        <ul class="space-y-4">
+                    {{-- Artikel Terkait --}}
+                    <div class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+                        <h2
+                            class="text-2xl font-bold text-gray-900 dark:text-white mb-5 border-b pb-2 border-primary-500">
+                            🔗 Artikel Terkait
+                        </h2>
+                        <ul class="space-y-3">
                             @foreach($related as $r)
                             <li>
                                 <a href="{{ url('posts/'. $r->slug) }}"
-                                    class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-                                    {{ $r->title }}
+                                    class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors block line-clamp-2">
+                                    &rsaquo; {{ $r->title }}
                                 </a>
                             </li>
                             @endforeach
