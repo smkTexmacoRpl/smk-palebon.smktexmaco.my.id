@@ -69,20 +69,18 @@ class Prakata extends Component
             'kepsek' => $this->kepsek,
         ];
 
-        if (is_object($this->foto_kepsek)) {
+        if ($this->foto_kepsek instanceof \Livewire\Features\SupportFileUploads\TemporaryUploadedFile) {
+            // Delete old image if updating
             if ($this->prakataId) {
                 $existingPrakata = PrakataModel::find($this->prakataId);
                 if ($existingPrakata && $existingPrakata->foto_kepsek && Storage::disk('public')->exists('foto_kepsek/' . $existingPrakata->foto_kepsek)) {
                     Storage::disk('public')->delete('foto_kepsek/' . $existingPrakata->foto_kepsek);
                 }
-            } else {
-                $existingPrakata = null;
             }
 
-            if (is_object($this->foto_kepsek)) {
-                $fotoPath = $this->foto_kepsek->store('foto_kepsek', 'public');
-                $data['foto_kepsek'] = basename($fotoPath);
-            }
+            // Store new image
+            $fotoPath = $this->foto_kepsek->store('foto_kepsek', 'public');
+            $data['foto_kepsek'] = basename($fotoPath);
         }
 
         PrakataModel::updateOrCreate(['id' => $this->prakataId], $data);

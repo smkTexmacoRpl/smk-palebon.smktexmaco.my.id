@@ -15,7 +15,7 @@
       <div class="absolute inset-0 flex items-center justify-center text-center text-white px-6">
         <div class="max-w-4xl">
           <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight animate-fade-up" data-aos="fade-right">
-            Selamat Datang di <br><span class="text-secondary">SMK Negeri 1 Teknologi</span>
+            Selamat Datang di <br><span class="text-secondary">SMK PALEBON SEMARANG</span>
           </h1>
           <p data-aos="fade-left" class="text-xl md:text-3xl mb-10 font-light">Siap Kerja • Siap Kuliah • Siap
             Berwirausaha</p>
