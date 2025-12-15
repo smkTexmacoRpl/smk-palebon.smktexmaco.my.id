@@ -25,9 +25,6 @@ Route::get('/sambutan', [SiteController::class, 'sambutan'])->name('sambutan.ind
 Route::get('/', function () {
     return view('front.home');
 })->name('home');
-// Route::get('/blender', function () {
-//     return view('layouts.blender');
-// })->name('blender');
 
 Route::get('/galeri', [App\Http\Controllers\GaleriController::class, 'index'])->name('galeri.index');
 Route::get('/visi_misi', [App\Http\Controllers\ProfilController::class, 'index'])->name('visi-misi');
