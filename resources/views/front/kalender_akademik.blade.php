@@ -9,7 +9,7 @@
 </style>
 @section('content')
 
-<section id="blog" class="py-12 bg-gray-50 dark:bg-gray-900 mt-[18vh]">
+<section id="blog" class="py-12 bg-gray-50 dark:bg-gray-900 mt-[20vh]">
     <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
         <!-- KONTEN UTAMA -->
         <div class="lg:col-span-2 bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6">

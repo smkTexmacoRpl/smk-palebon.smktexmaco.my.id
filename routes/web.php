@@ -25,9 +25,9 @@ Route::get('/sambutan', [SiteController::class, 'sambutan'])->name('sambutan.ind
 Route::get('/', function () {
     return view('front.home');
 })->name('home');
-Route::get('/1', function () {
-    return view('layouts.app');
-})->name('home1');
+// Route::get('/blender', function () {
+//     return view('layouts.blender');
+// })->name('blender');
 
 Route::get('/galeri', [App\Http\Controllers\GaleriController::class, 'index'])->name('galeri.index');
 Route::get('/visi_misi', [App\Http\Controllers\ProfilController::class, 'index'])->name('visi-misi');
@@ -37,7 +37,8 @@ Route::get('/detail_berita', [App\Http\Controllers\BlogController::class, 'index
 Route::get('/struktur_organisasi', [App\Http\Controllers\ProfilController::class, 'struktur'])->name('struktur-organisasi');
 Route::get('/guru_tedik', [App\Http\Controllers\GuruCOntroller::class, 'index'])->name('tedik.index');
 
-// Route::get('/ekstrakulikuler', [App\Http\Controllers\EkstrakulikulerController::class, 'index'])->name('ekstrakulikuler.index');
+Route::get('/kompetensi-keahlian', [App\Http\Controllers\JurusanController::class, 'index'])->name('jurusan.index');
+Route::get('/jurusan/{slug}', [App\Http\Controllers\JurusanController::class, 'show'])->name('jurusan.show');
 // Route::get('/fasilitas', [App\Http\Controllers\FasilitasController::class, 'index'])->name('fasilitas.index');
 Route::get('kalender', [App\Http\Controllers\JadwalController::class, 'kalenderAkademik'])->name('kalender-akademik.index');
 Route::get('jadwal', [App\Http\Controllers\JadwalController::class, 'jadwal'])->name('jadwal.index');

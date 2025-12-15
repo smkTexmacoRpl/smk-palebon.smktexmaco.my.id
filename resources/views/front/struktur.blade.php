@@ -1,7 +1,7 @@
 @extends('layouts.utama')
 @section('content')
-<div class="mt-[18vh] min-h-screen bg-linear-to-br from-secondary  via-blue-600 to-blue-950 p-4 md:p-8">
-    <div class="max-w-6xl mx-auto">
+<div class="p-4 md:p-8 mt-[20vh]">
+    <div class="max-w-7xl mx-auto bg-gradient-to-r from-blue-50 to-green-200 p-8 rounded-lg shadow-lg">
         <!-- Header -->
         <div class="text-center mb-12">
             <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-2">Struktur Organisasi</h1>
@@ -15,13 +15,14 @@
                 <div class="flex flex-col items-center">
                     <div
                         class="w-24 h-24 md:w-32 md:h-32 mb-4 rounded-[50%] overflow-hidden shadow-lg border-4 border-blue-600">
-                        <img src="{{ asset('images/kepala-sekolah.jpg') }}" alt="Kepala Sekolah"
+
+                        <img src="{{ asset('storage/foto_kepsek/'. $prakata->foto_kepsek) }}" alt="Kepala Sekolah"
                             class="w-full h-full object-cover">
                     </div>
                     <div
                         class="bg-white rounded-lg shadow-lg p-6 w-full md:w-64 text-center border-l-4 border-blue-600">
                         <h3 class="font-bold text-lg text-gray-800">Kepala Sekolah</h3>
-                        <p class="text-gray-600 text-sm mt-1">Nama Kepala Sekolah</p>
+                        <p class="text-gray-600 text-sm mt-1">{{$prakata->kepsek}}</p>
                     </div>
                 </div>
             </div>
