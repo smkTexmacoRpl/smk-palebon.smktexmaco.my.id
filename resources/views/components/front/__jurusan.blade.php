@@ -1,4 +1,4 @@
-<section id="jurusan" class="py-12 bg-white">
+<section id="jurusan" class=" bg-white">
 
   <div x-data="sliderData(6, 2)" class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 bg-gray-50 rounded-sm " data-aos="fade-up">
 
@@ -8,8 +8,7 @@
     <p class="text-center text-gray-900 mb-12 max-w-2xl mx-auto">Pilihan jurusan yang sesuai passion dan prospek
       kerja masa depan</p>
 
-    <div class="relative overflow-hidden py-16 bg-gradient-to-b from-gray-900 to-teal-900"
-      x-data="carousel({{ ceil($jurusan1->count() / 2) }})">
+    <div class="relative overflow-hidden py-8 bg-white" x-data="carousel({{ ceil($jurusan1->count() / 2) }})">
 
       <!-- Track Slider -->
       <div class="flex transition-transform duration-700 ease-in-out"
