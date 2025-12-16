@@ -38,7 +38,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M21 12a9 9 0 01-9 9m9-9h-2M3 12a9 9 0 009 9m-9-9h2m5 5v2m5-5v2m-5-5v2m5-5v2m-5-5v2m0-5V7m0 0a5 5 0 0110 0v2m0 0a5 5 0 01-10 0v-2">
               </path>
-              sds
+            
             </svg>
 
             <h3 class="text-2xl font-bold mb-2">Teknik Komputer & Jaringan (TKJ)</h3>
