@@ -45,9 +45,7 @@
                             <grok-card data-id="e017c8" data-type="image_card"></grok-card>
 
 
-                            {{-- <grok-card data-id="c939c1" data-type="image_card"></grok-card>
 
-                            <grok-card data-id="bfaa09" data-type="image_card"></grok-card> --}}
                         </div>
                     </div>
                 </div>

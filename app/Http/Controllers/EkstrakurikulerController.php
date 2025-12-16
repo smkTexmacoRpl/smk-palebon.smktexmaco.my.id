@@ -12,8 +12,8 @@ class EkstrakurikulerController extends Controller
      */
     public function index()
     {
-       $ekstras = Ekstrakurikuler::all();
-        return view('front.ekstra',[
+        $ekstras = Ekstrakurikuler::all();
+        return view('front.ekstra', [
             'ekstras' => $ekstras
         ]);
     }
@@ -21,48 +21,8 @@ class EkstrakurikulerController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function prestasi()
     {
         //
     }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Ekstrakurikuler $ekstrakurikuler)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Ekstrakurikuler $ekstrakurikuler)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Ekstrakurikuler $ekstrakurikuler)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Ekstrakurikuler $ekstrakurikuler)
-    {
-        //
-    }
-}
+}   
