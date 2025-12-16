@@ -53,6 +53,10 @@
             <a href="{{ route('admin.jadwal') }}" wire:navigate
               class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700">Kegiatan
               Akademik</a>
+            <a href="{{ route('admin.ekstra') }}" wire:navigate
+              class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700">Ekstrakurikuler</a>
+            </a>
+
             <a href="{{ route('admin.jurusan') }}" wire:navigate
               class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700">kompetensi
               Keahlian</a>

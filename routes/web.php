@@ -36,6 +36,7 @@ Route::get('/guru_tedik', [App\Http\Controllers\GuruCOntroller::class, 'index'])
 
 Route::get('/kompetensi-keahlian', [App\Http\Controllers\JurusanController::class, 'index'])->name('jurusan.index');
 Route::get('/jurusan/{slug}', [App\Http\Controllers\JurusanController::class, 'show'])->name('jurusan.show');
+Route::get('/ekstrakulikuler', [App\Http\Controllers\EkstrakurikulerController::class, 'index'])->name('ekstrakulikuler');
 // Route::get('/fasilitas', [App\Http\Controllers\FasilitasController::class, 'index'])->name('fasilitas.index');
 Route::get('kalender', [App\Http\Controllers\JadwalController::class, 'kalenderAkademik'])->name('kalender-akademik.index');
 Route::get('jadwal', [App\Http\Controllers\JadwalController::class, 'jadwal'])->name('jadwal.index');
