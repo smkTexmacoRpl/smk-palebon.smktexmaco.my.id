@@ -6,10 +6,10 @@
       <img src="{{asset('assets/images/smk_palebon_logo.png')}}" alt="Logo SMK" class="h-12 md:h-16 transition-all">
 
     </a>
-
-    <span class="flex justify-center items-center ml-2 font-light text-2xl sm:text-3xl sm:font-bold text-blue-500">SMK
-      <span class="text-secondary">PALEBON</span></span>
-
+    <a href="{{ route('home') }}"
+      class="flex justify-center items-center ml-2 font-light text-2xl sm:text-3xl sm:font-bold text-blue-500">SMK
+      &nbsp;
+      <span class="text-secondary">PALEBON</span></span></a>
 
     <div class="hidden lg:flex items-center space-x-1  text-gray-900 ">
       @foreach ($menus as $menu)
@@ -17,8 +17,8 @@
       @if($menu->children->count())
       <div class="relative" x-data="{ open: false }">
         <button @click="open = !open" class="flex items-center px-5 py-3 hover:text-secondary transition rounded-lg">
-          {{ $menu->nama }} <svg class="w-4 h-4 ml-1 transition-transform" :class="open ? 'rotate-180' : ''" fill="none"
-            stroke="currentColor" viewBox="0 0 24 24">
+          {{ ucwords($menu->nama) }} <svg class="w-4 h-4 ml-1 transition-transform" :class="open ? 'rotate-180' : ''"
+            fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" />
           </svg>
         </button>
@@ -29,14 +29,14 @@
           @foreach ($menu->children as $child)
           <a href="{{url( $child->url ?? '#') }}"
             class="block px-6 py-4 hover:bg-orange-50 hover:text-secondary transition">
-            {{ $child->nama }}
+            {{ ucwords($child->nama) }}
           </a>
           @endforeach
         </div>
       </div>
       @else
       <a href="{{url($menu->url ?? '#') }}" class="px-5 py-3 hover:text-secondary transition rounded-lg">
-        {{ $menu->nama }}
+        {{ ucwords($menu->nama) }}
       </a>
       @endif
       @endforeach
@@ -72,8 +72,8 @@
       @if($menu->children->count())
       <div x-data="{ open: false }">
         <button @click="open = !open" class="w-full text-left flex justify-between items-center py-3 font-medium">
-          {{ $menu->nama }} <svg class="w-5 h-5 transition-transform" :class="open ? 'rotate-180' : ''" fill="none"
-            stroke="currentColor" viewBox="0 0 24 24">
+          {{ strtoupper($menu->nama) }} <svg class="w-5 h-5 transition-transform" :class="open ? 'rotate-180' : ''"
+            fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" />
           </svg>
         </button>

@@ -16,8 +16,14 @@ class JurusanController extends Controller
         return view('front.jurusan-list', compact('jurusans'));
     }
 
-    public function show(Jurusan $jurusan)
+    public function show($slug)
     {
-        //
+        $jurusan = Jurusan::where('slug', $slug)->firstOrFail();
+        return view('front.jurusan-detail', compact('jurusan'));
+    }
+    public function show1($slug)
+    {
+        $jurusan1 = Jurusan::where('slug', $slug)->firstOrFail();
+        return view('components.front.__jurusan', compact('jurusan1'));
     }
 }

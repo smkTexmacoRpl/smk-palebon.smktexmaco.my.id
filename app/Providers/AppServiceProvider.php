@@ -45,5 +45,11 @@ class AppServiceProvider extends ServiceProvider
             $visi = \App\Models\ProfilSekolah::first();
             View::share('visi', $visi);
         }
+        if (Schema::hasTable('jurusans')) {
+           
+                $jurusan1 = \App\Models\Jurusan::get();
+                View::share('jurusan1', $jurusan1);
+            }
+        }
     }
-}
+

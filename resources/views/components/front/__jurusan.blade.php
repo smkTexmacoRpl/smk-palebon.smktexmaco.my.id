@@ -9,13 +9,17 @@
     <p class="text-center text-gray-900 mb-12 max-w-2xl mx-auto">Pilihan jurusan yang sesuai passion dan prospek
       kerja masa depan</p>
 
+
+    @foreach ($jurusan1 as $jr )
+
+
     <div class="relative overflow-hidden">
       <div x-ref="track" class="flex transition-transform duration-500 ease-in-out"
         :style="`transform: translateX(-${(currentPage - 1) * 100}%)`">
         <div class="w-full flex-shrink-0 grid md:grid-cols-2 gap-6 p-2">
 
           <div
-            class="bg-green-700 text-gray-200 rounded-lg shadow-xl p-6 transform hover:scale-[1.02] transition duration-300">
+            class="bg-gradient-to-r from-teal-900 to-green-700 text-gray-200 rounded-lg shadow-xl p-6 transform hover:scale-[1.02] hover:text-orange-500 transition duration-300">
             <svg class="w-10 h-10 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -23,9 +27,8 @@
               </path>
             </svg>
 
-            <h3 class="text-2xl font-bold mb-2">Rekayasa Perangkat Lunak (RPL)</h3>
-            <p class="text-gray-300">Mengembangkan aplikasi desktop, web, dan mobile. Fokus pada logika
-              pemrograman modern.</p>
+            <h3 class="text-2xl font-bold mb-2">{{ $jr->nama_jurusan }}</h3>
+            <p class="text-gray-300">{{ substr($jr->keterangan, 0, 150) }}....</p>
           </div>
 
           <div
@@ -35,6 +38,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M21 12a9 9 0 01-9 9m9-9h-2M3 12a9 9 0 009 9m-9-9h2m5 5v2m5-5v2m-5-5v2m5-5v2m-5-5v2m0-5V7m0 0a5 5 0 0110 0v2m0 0a5 5 0 01-10 0v-2">
               </path>
+              sds
             </svg>
 
             <h3 class="text-2xl font-bold mb-2">Teknik Komputer & Jaringan (TKJ)</h3>
@@ -107,7 +111,7 @@
         </div>
       </div>
     </div>
-
+    @endforeach
     <div class="flex justify-between items-center mt-6">
       <button @click="prevPage" :disabled="currentPage === 1"
         class="p-3 bg-gray-300 rounded-full hover:bg-gray-400 disabled:opacity-50 transition duration-150"

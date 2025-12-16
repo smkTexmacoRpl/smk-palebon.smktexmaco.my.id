@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('nama_jurusan');
             $table->string('slug')->unique();
             $table->text('keterangan')->nullable();
-            $table->string('peluang_kerja')->nullable();
+            $table->text('peluang_kerja')->nullable();
             $table->text('materi')->nullable();
             $table->string('foto')->nullable();
             $table->timestamps();

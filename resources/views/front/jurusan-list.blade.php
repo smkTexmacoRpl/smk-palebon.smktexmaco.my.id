@@ -16,21 +16,21 @@
                 class="bg-white dark:bg-gray-800 rounded-xl shadow-xl overflow-hidden group transform hover:scale-[1.02] transition-transform duration-500 ease-in-out border border-gray-100 dark:border-gray-700">
                 {{-- Cover Image --}}
                 <div class="h-52 overflow-hidden">
-                    <img src="{{ asset('storage/'.$jurusan->cover_image) }}" alt="{{ $jurusan->name }}"
+                    <img src="{{ asset('storage/'.$jurusan->foto) }}" alt="{{ $jurusan->nama_jurusan }}"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out" />
                 </div>
 
                 {{-- Content --}}
                 <div class="p-6">
                     <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 line-clamp-2"
-                        title="{{ $jurusan->name }}">
-                        {{ $jurusan->name }}
+                        title="{{ $jurusan->nama_jurusan }}">
+                        {{ $jurusan->nama_jurusan }}
                     </h3>
                     <p class="text-gray-600 dark:text-gray-400 mb-4 text-base line-clamp-3">
-                        {{ substr($jurusan->description, 0, 150) }}...
+                        {{ substr($jurusan->keterangan, 0, 150) }}...
                     </p>
                     <a href="{{ route('jurusan.show', $jurusan->slug) }}"
-                        class="inline-flex items-center font-semibold text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors duration-300">
+                        class="inline-flex items-center font-semibold text-primary-600 dark:text-primary-400 hover:text-secondary transition-colors duration-300">
                         Pelajari Lebih Lanjut
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
