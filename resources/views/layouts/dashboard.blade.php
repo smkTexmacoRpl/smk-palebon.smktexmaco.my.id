@@ -5,13 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>@yield('title', 'Dashboard SMK Palebon ')</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+
+  @vite('resources/css/app.css')
+  @vite('resources/js/app.js')
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  <script>
-    tailwind.config = {
-            darkMode: 'class',
-        }
-  </script>
   @livewireStyles
   {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -41,12 +38,12 @@
   <div class="flex h-full">
     <!-- Sidebar -->
 
-    <x-sidebar />
+    <x-admin.sidebar />
 
     <!-- Main Content -->
     <div id="main-content" class="flex-1 flex flex-col overflow-hidden transition-all duration-300">
       <!-- Header -->
-      <x-header />
+      <x-admin.header />
       <!-- Content -->
       <main class="flex-1 overflow-y-auto p-4 bg-gray-50 dark:bg-gray-900">
         <div class="my-6">
@@ -68,13 +65,13 @@
   </div>
   <script src="{{ asset('assets/js/dash.min.js') }}"> </script>
   @livewireScripts
+  @stack('scripts')
+
   <script>
     Livewire.on('toast', ({type, message}) => {
         alert(message); // bisa diganti pakai sweetalert/toastify
     });
   </script>
-
-
 </body>
 
 </html>

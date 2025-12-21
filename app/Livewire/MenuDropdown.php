@@ -6,6 +6,7 @@ use Livewire\Component;
 use App\Models\Menu;
 use Livewire\WithPagination;
 
+
 class MenuDropdown extends Component
 {
     use WithPagination;
@@ -23,7 +24,7 @@ class MenuDropdown extends Component
     public function render()
     {
         return view('livewire.menu-dropdown', [
-            'menus' => Menu::with('children')->whereNull('parent_id')->orderBy('urutan')->paginate(10),
+            'menus' => Menu::with('children')->whereNull('parent_id')->orderBy('urutan')->paginate(5),
             'parents' => Menu::whereNull('parent_id')->get()
         ]);
     }
@@ -76,7 +77,7 @@ class MenuDropdown extends Component
         $this->isModalOpen = true;
     }
 
-    private function closeModal()
+    public function closeModal()
     {
         $this->isModalOpen = false;
     }

@@ -60,10 +60,12 @@
             <a href="{{ route('admin.jurusan') }}" wire:navigate
               class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700">kompetensi
               Keahlian</a>
+            <a href="{{ route('admin.prestasi') }}" wire:navigate
+              class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700">prestasi</a>
+            <a href="{{ route('admin.counter') }}" wire:navigate
+              class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700">Counter</a>
 
           </div>
-          <a href="{{ route('admin.counter') }}" wire:navigate
-            class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700">Counter</a>
 
         </div>
       </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ekstrakurikuler;
+use App\Models\Prestasi;
 use Illuminate\Http\Request;
 
 class EkstrakurikulerController extends Controller
@@ -23,6 +24,9 @@ class EkstrakurikulerController extends Controller
      */
     public function prestasi()
     {
-        //
+        $prestasis = Prestasi::all();
+        return view('front.prestasi', [
+            'prestasis' => $prestasis
+        ]);
     }
-}   
+}

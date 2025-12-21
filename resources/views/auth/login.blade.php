@@ -37,7 +37,7 @@
     </style>
 </head>
 
-<body class="min-h-screen  flex items-center justify-center p-4">
+<body class="my-10 min-h-screen  flex items-center justify-center p-4">
 
     <!-- Background decorative elements -->
     <div class="absolute inset-0 overflow-hidden">
@@ -127,7 +127,7 @@
             </div>
 
             <!-- Social Login Buttons -->
-            <div class="px-8 pb-8">
+            {{-- <div class="px-8 pb-8">
                 <div class="grid grid-cols-2 gap-4">
                     <button
                         class="flex items-center justify-center px-4 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xl text-white transition-all duration-300">
@@ -152,7 +152,7 @@
                         <span class="ml-2">Facebook</span>
                     </button>
                 </div>
-            </div>
+            </div> --}}
 
             <!-- Sign Up Link -->
             <div class="px-8 pb-8 text-center">

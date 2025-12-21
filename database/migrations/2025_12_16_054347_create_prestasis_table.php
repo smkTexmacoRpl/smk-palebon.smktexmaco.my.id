@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('prestasis', function (Blueprint $table) {
             $table->id();
+            $table->string('judul');
+            $table->string('keterangan')->nullable();
+            $table->string('team')->nullable();
+            $table->json('gambar')->nullable();
             $table->timestamps();
         });
     }

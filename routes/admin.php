@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Admin\JadwalCrud;
+use App\Livewire\Admin\PrestasiCrud;
 
 
 Route::middleware(['auth'])->prefix('admin')->group(function () {
@@ -63,4 +64,10 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
   Route::get('/ekstra', function () {
     return view('admin.ekstra');
   })->name('admin.ekstra');
+
+  Route::get('/prestasi', function () {
+    return view('admin.prestasi');
+  })->name('admin.prestasi');
+
+  // Route::get('/prestasi', PrestasiCrud::class)->name('admin.prestasi');
 });

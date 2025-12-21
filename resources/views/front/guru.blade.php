@@ -29,23 +29,23 @@
             </div>
             <hr class="w-full mb-6">
             </h1>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 @forelse ($gurus as $guru)
 
 
                 <div
-                    class="w-full h-[100px] bg-white rounded-xl shadow-lg overflow-hidden flex group hover:border border-slate-300 transition-border  duration-100">
+                    class="w-full h-[200px] bg-white rounded-xl shadow-lg overflow-hidden flex group hover:border border-slate-300 transition-border  duration-100">
                     <div class="w-[35%] h-full shrink-0 relative overflow-hidden">
                         <img class="h-full w-full object-cover transition duration-500 group-hover:scale-125"
                             src="{{ asset($guru->foto_url) }}" alt="Kopi">
                     </div>
                     <div class="w-[65%] p-3 flex flex-col justify-center">
-                        <span class="text-xs font-bold text-indigo-500 uppercase">{{ $guru->nama_lengkap }}</span>
-                        <h3 class="text-xs  text-slate-800 leading-tight mt-1">{{ $guru->jabatan }}</h3>
-                        <h3 class="text-xs  text-slate-800 leading-tight mt-1">{{ $guru->alamat }}</h3>
-                        <h3 class="text-xs  text-slate-800 leading-tight mt-1">{{ $guru->bidang_studi }}</h3>
+                        <span class="text-lg font-bold text-indigo-500 uppercase">{{ $guru->nama_lengkap }}</span>
+                        <h3 class="text-base text-slate-800 leading-tight mt-1">{{ $guru->jabatan }}</h3>
+                        <h3 class="text-base  text-slate-800 leading-tight mt-1">{{ $guru->alamat }}</h3>
+                        <h3 class="text-base text-slate-800 leading-tight mt-1">{{ $guru->bidang_studi }}</h3>
 
-                        <button class="text-xs bg-indigo-500 text-white px-1 rounded w-fit hover:bg-indigo-600">
+                        <button class="text-sm bg-indigo-500 text-white px-1 rounded w-fit hover:bg-indigo-600">
                             Detail
                         </button>
                     </div>
