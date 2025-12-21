@@ -130,6 +130,5 @@
       <form action="{{ route('logout') }}" id="logout-form" method="POST" class="hidden">
         @csrf
       </form>
-
   </nav>
 </aside>

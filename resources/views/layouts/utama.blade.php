@@ -8,12 +8,12 @@
   <meta name="description"
     content="SMK Negeri Palebon Semarang - Sekolah kejuruan terbaik dengan jurusan unggulan dan lulusan tersalurkan 98%">
 
-  @vite('resources/css/app.css')
-  @vite('resources/js/app.js')
+
   <!-- AOS Animation -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
+  @vite('resources/css/app.css')
+  @vite('resources/js/app.js')
   @yield('styles')
   <style>
     .navbar-scrolled {
@@ -55,7 +55,7 @@
     <x-front.__scripts />
   </script>
 
-  <script type="text/javascript">
+  {{-- <script type="text/javascript">
     function googleTranslateElementInit() {
       new google.translate.TranslateElement(
         {
@@ -68,7 +68,7 @@
     }
   </script>
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-  </script>
+  </script> --}}
 </body>
 
 </html>
