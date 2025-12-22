@@ -14,6 +14,7 @@ class PrestasiCrud extends Component
     use WithFileUploads;
     public $judul = '';
     public $keterangan = '';
+    public $tahun = '';
     public $team = '';
     public $gambar = [];
     public $prestasiId = null;
@@ -28,6 +29,7 @@ class PrestasiCrud extends Component
     protected $rules = [
         'judul' => 'required|string|max:255',
         'keterangan' => 'nullable|string',
+        'tahun' => 'nullable|string',
         'team' => 'nullable|string',
         'gambar.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
     ];
@@ -60,6 +62,7 @@ class PrestasiCrud extends Component
         Prestasi::create([
             'judul' => $this->judul,
             'keterangan' => $this->keterangan,
+            'tahun' => $this->tahun,
             'team' => $this->team,
             'gambar' => $paths,
         ]);
@@ -75,6 +78,7 @@ class PrestasiCrud extends Component
         $this->prestasiId = $id;
         $this->judul = $prestasi->judul;
         $this->keterangan = $prestasi->keterangan;
+        $this->tahun = $prestasi->tahun;
         $this->team = $prestasi->team;
         $this->existingGambar = $prestasi->gambar ?? [];
 
@@ -103,6 +107,7 @@ class PrestasiCrud extends Component
         $prestasi->update([
             'judul' => $this->judul,
             'keterangan' => $this->keterangan,
+            'tahun' => $this->tahun,
             'team' => $this->team,
             'gambar' => $paths,
         ]);
@@ -112,32 +117,31 @@ class PrestasiCrud extends Component
         $this->closeModal();
     }
     public function confirmDelete($id)
-{
-    try {
-        $prestasi = Prestasi::findOrFail($id);
+    {
+        try {
+            $prestasi = Prestasi::findOrFail($id);
 
-        if ($prestasi->gambar) {
-            foreach ((array) $prestasi->gambar as $path) {
-                if (Storage::disk('public')->exists($path)) {
-                    Storage::disk('public')->delete($path);
+            if ($prestasi->gambar) {
+                foreach ((array) $prestasi->gambar as $path) {
+                    if (Storage::disk('public')->exists($path)) {
+                        Storage::disk('public')->delete($path);
+                    }
                 }
             }
+
+            $prestasi->delete();
+
+            $this->toast = [
+                'message' => 'Prestasi berhasil dihapus!',
+                'type' => 'success'
+            ];
+        } catch (\Exception $e) {
+            $this->toast = [
+                'message' => 'Gagal menghapus data',
+                'type' => 'error'
+            ];
         }
-
-        $prestasi->delete();
-
-        $this->toast = [
-            'message' => 'Prestasi berhasil dihapus!',
-            'type' => 'success'
-        ];
-
-    } catch (\Exception $e) {
-        $this->toast = [
-            'message' => 'Gagal menghapus data',
-            'type' => 'error'
-        ];
     }
-}
 
 
 
@@ -152,6 +156,7 @@ class PrestasiCrud extends Component
         $this->prestasiId = null;
         $this->judul = '';
         $this->keterangan = '';
+        $this->tahun = '';
         $this->team = '';
         $this->gambar = [];
         $this->existingGambar = [];

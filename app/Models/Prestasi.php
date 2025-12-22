@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Prestasi extends Model
 {
-    protected $fillable = ['judul', 'keterangan', 'team', 'gambar'];
+    protected $fillable = ['judul', 'keterangan', 'tahun', 'team', 'gambar'];
 
     protected $casts = [
         'gambar' => 'array',

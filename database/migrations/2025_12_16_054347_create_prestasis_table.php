@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('judul');
             $table->string('keterangan')->nullable();
-            $table->string('team')->nullable();
+            $table->string('tahun', 50)->nullable();
+            $table->string('team', 100)->nullable();
             $table->json('gambar')->nullable();
             $table->timestamps();
         });

@@ -138,6 +138,15 @@
                                 <span class="text-red-500 text-sm mt-1 block">{{ $message }}</span>
                                 @enderror
                             </div>
+                            <!-- Tahun -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Tahun</label>
+                                <input type="text" wire:model.live="tahun"
+                                    class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                                @error('tahun')
+                                <span class="text-red-500 text-sm mt-1 block">{{ $message }}</span>
+                                @enderror
+                            </div>
 
                             <!-- Team -->
                             <div>
